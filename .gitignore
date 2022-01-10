@@ -1,4 +1,2 @@
-#don't track file5
-file5
-#don't track any hidden file
-.*
+#don't track file7
+file7
