@@ -1,17 +1,20 @@
 ---
 - hosts: webservers
   become: true
-  gather_facts: no
   tasks:
     - name: install apache
       yum:
         name: httpd
-        state: present
+        state: installed
     - name: start apache
       service:
         name: httpd
         state: started
         enabled: True
+    - name: restart apache
+      service:
+        name: httpd
+        state: restarted
     - name: Deploy static website
       copy:
         src: index.html
