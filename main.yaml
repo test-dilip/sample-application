@@ -11,11 +11,6 @@
       service:
         name: httpd
         state: started
-        enabled: True
-    - name: restart apache
-      service:
-        name: httpd
-        state: restarted
     - name: Deploy static website
       copy:
         src: index.html
